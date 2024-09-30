@@ -114,5 +114,4 @@ const toggleButton = (button) => {
         }
     }
 };
-
 </script>
