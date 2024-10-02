@@ -11,6 +11,9 @@ export default {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        beige: '#F5F5DC',
+      },
     },
   },
   plugins: [],

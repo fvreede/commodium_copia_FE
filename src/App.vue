@@ -1,12 +1,16 @@
 <script setup>
 import NavBar from './components/NavBar.vue'
 import PromoSection from './components/PromoSection.vue';
+import ProductGrid from './components/ProductGrid.vue';
 </script>
 
 <template>
   <header class="shadow-md">
     <NavBar />
-    <PromoSection />
   </header>
+  <main>
+    <PromoSection />
+    <ProductGrid />
+  </main>
 </template>
 
