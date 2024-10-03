@@ -14,7 +14,7 @@
                     </div>
                     <!-- Search bar -->
                     <div class="hidden sm:ml-6 sm:block">
-                        <input type="text" placeholder="Zoek een product" v-model="searchQuary" class="w-full max-w-md rounded-md border border-gray-300 p-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400 shadow-sm"/>
+                        <input type="search" placeholder="Zoek een product" v-model="searchQuery" class="w-full max-w-md rounded-md border border-gray-300 p-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400 shadow-sm"/>
                     </div>
                     <!-- Nav bar -->
                     <div class="hidden sm:ml-6 sm:block">
@@ -70,7 +70,7 @@
         </div>
 
         <div v-if="showSearch && !menuOpen" class="sm:hidden px-4 pb-3 pt-2">
-            <input type="text" placeholder="Zoek een product" v-model="searchQuery" class="w-full rounded-md border border-gray-300 p-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-300 shadow-sm"/>
+            <input type="search" placeholder="Zoek een product" v-model="searchQuery" class="w-full rounded-md border border-gray-300 p-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400 shadow-sm"/>
         </div>
 
         <DisclosurePanel v-if="menuOpen" class="sm:hidden">
