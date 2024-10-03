@@ -1,5 +1,5 @@
 <template>
-    <Disclosure as="nav" class="bg-slate-50" v-slot="{ open }">
+    <Disclosure as="nav" class="bg-slate-100" v-slot="{ open }">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div class="relative flex h-16 items-center justify-between">
                 <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
@@ -14,7 +14,7 @@
                     </div>
                     <!-- Search bar -->
                     <div class="hidden sm:ml-6 sm:block">
-                        <input type="text" placeholder="Zoek een product" v-model="searchQuary" class="w-full max-w-md rounded-md border border-gray-300 p-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-300 shadow-sm"/>
+                        <input type="text" placeholder="Zoek een product" v-model="searchQuary" class="w-full max-w-md rounded-md border border-gray-300 p-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400 shadow-sm"/>
                     </div>
                     <!-- Nav bar -->
                     <div class="hidden sm:ml-6 sm:block">
