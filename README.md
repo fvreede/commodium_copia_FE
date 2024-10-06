@@ -20,3 +20,4 @@ Frontend:
 3. Heroicons/Headless UI
 4. Postcss 8.4.38
 5. Autoprefixer 0.4.19
+6. Fontawesome brands icons (for Social media icons)
