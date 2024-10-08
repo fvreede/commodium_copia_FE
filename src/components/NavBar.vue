@@ -1,5 +1,5 @@
 <template>
-    <Disclosure as="nav" class="bg-slate-100" v-slot="{ open }">
+    <Disclosure as="nav" class="bg-slate-100 fixed w-full top-0 z-50" v-slot="{ open }">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div class="relative flex h-16 items-center justify-between">
                 <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
@@ -84,8 +84,8 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue';
+import { computed, ref, onMounted, onBeforeUnmount } from 'vue'
+import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon, ShoppingCartIcon, UserIcon, MagnifyingGlassIcon } from '@heroicons/vue/24/outline'
 
 const navigation = [
