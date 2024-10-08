@@ -1,22 +1,8 @@
 <script setup>
-import NavBar from './components/NavBar.vue'
-import PromoSection from './components/PromoSection.vue';
-import ProductGrid from './components/ProductGrid.vue';
-import NewsSection from './components/NewsSection.vue';
-import Footer from './components/Footer.vue';
+import { RouterView } from 'vue-router';
 </script>
 
 <template>
-  <header class="shadow-md">
-    <NavBar />
-  </header>
-  <main>
-    <PromoSection />
-    <ProductGrid />
-    <NewsSection />
-  </main>
-  <footer>
-    <Footer />
-  </footer>
+  <RouterView />
 </template>
 
