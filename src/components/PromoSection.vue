@@ -1,7 +1,7 @@
 <template>
     <div class="relative h-screen">
         <!-- Background image -->
-        <img src="/src/assets/images/herfstPromotion.jpg" alt="Herfst promotie" class="absolute inset-0 h-full w-full object-cover"/>
+        <img src="@/assets/images/herfstPromotion.jpg" alt="Herfst promotie" class="absolute inset-0 h-full w-full object-cover"/>
 
         <!-- Overlay for readability -->
         <div class="absolute inset-0 bg-black opacity-30"></div>
