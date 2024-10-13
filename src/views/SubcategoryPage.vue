@@ -23,15 +23,18 @@
 
                 <!-- Products Grid under each subcategory -->
                 <div class="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    <!-- Loop through products -->
                     <div v-for="product in subcategory.products" :key="product.id" class="group relative">
-                        <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="https://dummyimage.com/300x300" alt="Product image" class="w-full h-full object-center object-cover lg:w-full lg:h-full" />
-                        </div>
-                        <div class="mt-4 flex justify-between">
-                            <div>
-                                <h4 class="text-sm font-medium text-gray-900">{{ product.name }}</h4>
+                        <router-link :to="{ name: 'Product', params: { id: product.id, bannerSrc: subcategory.bannerSrc } }">
+                            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                                <img src="https://dummyimage.com/300x300" alt="Product image" class="w-full h-full object-center object-cover lg:w-full lg:h-full" />
                             </div>
-                        </div>
+                            <div class="mt-4 flex justify-between">
+                                <div>
+                                    <h4 class="text-sm font-medium text-gray-900">{{ product.name }}</h4>
+                                </div>
+                            </div>
+                        </router-link>
                     </div>
                 </div>
             </div>
