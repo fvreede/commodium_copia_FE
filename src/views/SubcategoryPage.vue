@@ -5,13 +5,17 @@
         <div class="relative category-banner">
             <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/20 z-10"></div>
             <img :src="bannerSrc" alt="Category banner" class="w-full h-64 object-cover object-center" />
-            <h2 class="absolute inset-y-0 z-20 left-0 flex items-center text-2xl font-bold tracking-tight p-4 h_text sm:text-2xl md:text-4xl lg:text-6xl mt-8">{{ categoryName }}</h2>
-                <router-link to="/category" class="absolute top-1/2 transform-translate-y-1/2 right-2 z-20 flex items-center px-4 py-2 text-xs font-medium text-white bg-gray-800 hover:bg-gray-900 rounded-full mx-4 my-auto">
+            <div class="absolute inset-0 z-20 flex flex-col items-center justify-center p-4">
+                <h2 class="text-2xl font-bold tracking-tight h_text sm:text-2xl md:text-4xl lg:text-6xl text-center mb-4 md:mb-0 md:absolute md:left-4 md:top-1/2 md:transform md:-translate-y-1/2">
+                    {{ categoryName }}
+                </h2>
+                <router-link to="/category" class="flex items-center px-4 py-2 text-xs font-medium text-white bg-gray-800 hover:bg-gray-900 rounded-full md:absolute md:right-4 md:top-1/2 md:transform md:-translate-y-1/2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                     </svg>
-                Back to categories
-            </router-link>
+                    Back to categories
+                </router-link>
+            </div>
         </div>
 
         <!-- Subcategories and products -->
