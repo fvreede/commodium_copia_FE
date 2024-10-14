@@ -9,8 +9,9 @@
                         </button>
                     </div>
                     <!-- Logo -->                   
-                    <div class="flex flex-shrink-0 items-center">
-                        <a href="/" class="text-2xl font-bold text-gray-700">Commodium Copia</a>
+                    <div class="flex flex-shrink-0 items-center mr-20 sm:mr-0">
+                        <a href="/" class="text-2xl font-bold text-gray-700 block lg:hidden">ComCopia</a>
+                        <a href="/" class="hidden lg:block text-2xl font-bold text-gray-700">Commodium Copia</a>
                     </div>
                     <!-- Search bar -->
                     <div class="hidden sm:ml-6 sm:block">
