@@ -1,0 +1,191 @@
+[
+    {
+        "id": 1,
+        "name": "Groenten en Fruit",
+        "bannerSrc": "assets/images/subcategories/banners/groentenFruitBanner.jpg",
+        "subcategories": [
+            {
+                "id": 1,
+                "name": "Groenten",
+                "products": [
+                    {
+                        "id": 1,
+                        "name": "Wortelen",
+                        "description": "Vers van het land, knapperige wortelen boordevol vitamines",
+                        "price": 1.99,
+                        "imageSrc": "#"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Bloemkool",
+                        "description": "Romige bloemkool, perfect voor al je gezonde gerechten",
+                        "price": 2.99,
+                        "imageSrc": "#"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Spinazie",
+                        "description": "Lekkere, verse spinazie rijk aan ijzer",
+                        "price": 1.49,
+                        "imageSrc": "#"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Fruit",
+                "products": [
+                    {
+                        "id": 1,
+                        "name": "Appels",
+                        "description": "Sappige appels, rechtstreeks van de boomgaard",
+                        "price": 1.99,
+                        "imageSrc": "#"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Sinaasappels",
+                        "description": "Zonovergoten sinaasappels uit het hart van Spanje",
+                        "price": 2.99,
+                        "imageSrc": "#"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Bananen",
+                        "description": "Tropische bananen, heerlijk zoet en voedzaam",
+                        "price": 1.49,
+                        "imageSrc": "#"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Bakkerij en Brood",
+        "bannerSrc": "assets/images/subcategories/banners/bakkerijBroodBanner.jpg",
+        "subcategories": [
+            {
+                "id": 1,
+                "name": "Brood",
+                "products": [
+                    {
+                        "id": 1,
+                        "name": "Wit brood",
+                        "description": "Versgebakken wit brood met een knapperige korst",
+                        "price": 1.99,
+                        "imageSrc": "#"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Bruin brood",
+                        "description": "Gezond bruin brood, rijk aan vezels",
+                        "price": 2.99,
+                        "imageSrc": "#"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Croissant",
+                        "description": "Luchtige croissants, warm en vers uit de oven",
+                        "price": 1.49,
+                        "imageSrc": "#"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Gebak",
+                "products": [
+                    {
+                        "id": 1,
+                        "name": "Red Velvet Cake",
+                        "description": "Rijke, fluweelzachte red velvet cake met romige topping",
+                        "price": 1.99,
+                        "imageSrc": "#"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Muffins",
+                        "description": "Zachte muffins, een perfecte zoete snack",
+                        "price": 2.99,
+                        "imageSrc": "#"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Brownies",
+                        "description": "Chocoladerijke brownies, vol van smaak",
+                        "price": 1.49,
+                        "imageSrc": "#"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Zuivel en Eieren",
+        "bannerSrc": "assets/images/subcategories/banners/zuivelEierenBanner.jpg",
+        "subcategories": [
+            {
+                "id": 1,
+                "name": "Zuivel",
+                "products": [
+                    {
+                        "id": 1,
+                        "name": "Melk",
+                        "description": "Verse melk, romig en puur",
+                        "price": 1.99,
+                        "imageSrc": "#"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Yoghurt",
+                        "description": "Heerlijke, frisse yoghurt voor elk moment",
+                        "price": 2.99,
+                        "imageSrc": "#"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Kaas",
+                "products": [
+                    {
+                        "id": 1,
+                        "name": "Gouda kaas",
+                        "description": "Zachte, romige Gouda, een echte klassieker",
+                        "price": 1.99,
+                        "imageSrc": "#"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Feta kaas",
+                        "description": "Ziltige feta uit Griekenland, perfect voor salades",
+                        "price": 2.99,
+                        "imageSrc": "#"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Brie kaas",
+                        "description": "Romige brie met een zachte, smeltende textuur",
+                        "price": 1.49,
+                        "imageSrc": "#"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Eieren",
+                "products": [
+                    {
+                        "id": 1,
+                        "name": "Scharreleieren",
+                        "description": "Vers geplukte scharreleieren van blije kippen",
+                        "price": 1.99,
+                        "imageSrc": "#"
+                    }
+                ]
+            }
+        ]
+    }
+]

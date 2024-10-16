@@ -4,7 +4,7 @@
         <!-- Dynamic Banner for each category -->
         <div class="relative category-banner">
             <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/20 z-10"></div>
-            <img :src="bannerSrc" alt="Category banner" class="w-full h-64 object-cover object-center" />
+            <img :src="resolveImagePath(bannerSrc)" alt="Category banner" class="w-full h-64 object-cover object-center" />
             <div class="absolute inset-0 z-20 flex flex-col items-center justify-center p-4">
                 <h2 class="text-2xl font-bold tracking-tight h_text sm:text-2xl md:text-4xl lg:text-6xl text-center mb-4 md:mb-0 md:absolute md:left-6 md:top-1/2 md:transform md:-translate-y-1/2">
                     {{ categoryName }}
@@ -56,207 +56,12 @@ import { useRoute } from 'vue-router';
 import NavBar from '@/components/NavBar.vue';
 import Footer from '@/components/Footer.vue';
 
-// Category specific banners
-import groentenFruitBanner from '@/assets/images/subcategories/banners/groentenFruitBanner.jpg';
-import bakkerijBroodBanner from '@/assets/images/subcategories/banners/bakkerijBroodBanner.jpg';
-import zuivelEierenBanner from '@/assets/images/subcategories/banners/zuivelEierenBanner.jpg';
-
-// Mock data for subcategories and products
-const allCategories = ref([
-    {
-        id: 1,
-        name: 'Groenten en Fruit',
-        bannerSrc: groentenFruitBanner,
-        subcategories: [
-            { 
-                id: 1, 
-                name: 'Groenten',
-                products: [
-                    { 
-                        id: 1, 
-                        name: 'Wortel',
-                        description: 'Een oranje wortel',
-                        price: 1.50,
-                        imageSrc: ''
-                    },
-                    { 
-                        id: 2, 
-                        name: 'Bloemkool',
-                        description: 'Een witte bloemkool',
-                        price: 1.50,
-                        imageSrc: ''
-                    },
-                    { 
-                        id: 3, 
-                        name: 'Spinazie',
-                        description: 'Een groene spinazie',
-                        price: 1.50,
-                        imageSrc: ''
-                    }
-                ]
-            },
-            {
-                id: 2, 
-                name: 'Fruit',
-                products: [
-                    { 
-                        id: 10, 
-                        name: 'Appel',
-                        description: 'Een rode appel',
-                        price: 1.50,
-                        imageSrc: ''
-                    },
-                    { 
-                        id: 11, 
-                        name: 'Banaan',
-                        description: 'Een tros gele bananen',
-                        price: 1.50,
-                        imageSrc: ''
-                    },
-                    { 
-                        id: 12, 
-                        name: 'Sinaasappel',
-                        description: 'Een oranje sinaasappel',
-                        price: 1.50,
-                        imageSrc: ''
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        id: 2,
-        name: 'Bakkerij en Brood',
-        bannerSrc: bakkerijBroodBanner,
-        subcategories: [
-            { 
-                id: 3, 
-                name: 'Brood',
-                products: [
-                    { 
-                        id: 20, 
-                        name: 'Wit brood',
-                        description: 'Een wit brood met een licht korstje',
-                        price: 2.50,
-                        imageSrc: '../assets/images/subcategories/products/bakkerij_brood/witbrood.jpg'
-                    },
-                    { 
-                        id: 21, 
-                        name: 'Bruin brood',
-                        description: 'Een bruin brood met een donker korstje',
-                        price: 2.50,
-                        imageSrc: ''
-                    },
-                    { 
-                        id: 22, 
-                        name: 'Croissant',
-                        description: 'Twee verse croissants',
-                        price: 1.50,
-                        imageSrc: ''
-                    }
-                ]
-            },
-            { 
-                id: 4, 
-                name: 'Gebak',
-                products: [
-                    { 
-                        id: 30, 
-                        name: 'Brownie',
-                        description: 'Een heerlijke verse brownie',
-                        price: 2.50,
-                        imageSrc: ''
-                    },
-                    { 
-                        id: 31, 
-                        name: 'Muffin',
-                        description: 'Een heerlijke versgebakken muffin',
-                        price: 2.50,
-                        imageSrc: ''
-                    },
-                    { 
-                        id: 32, 
-                        name: 'Red Velvet Cake',
-                        description: 'Een heerlijke verse red velvet cake',
-                        price: 3.50,
-                        imageSrc: ''
-                    },
-                ]
-            }
-        ]
-    },
-    {
-        id: 3,
-        name: 'Zuivel en Eieren',
-        bannerSrc: zuivelEierenBanner,
-        subcategories: [
-            {
-                id: 5,
-                name: 'Zuivel',
-                products: [
-                    { 
-                        id: 40, 
-                        name: 'Melk',
-                        description: 'Een flesje melk',
-                        price: 1.00,
-                        imageSrc: ''
-                    },
-                    { 
-                        id: 41, 
-                        name: 'Yoghurt',
-                        description: 'Een potje yoghurt',
-                        price: 2.00,
-                        imageSrc: ''
-                    },
-                ]
-            },
-            {
-                id: 6,
-                name: 'Kaas',
-                products: [
-                    { 
-                        id: 43, 
-                        name: 'Gouda',
-                        description: 'Een stukje gouda kaas',
-                        price: 3.00,
-                        imageSrc: ''
-                    },
-                    { 
-                        id: 44, 
-                        name: 'Feta',
-                        description: 'Een stukje feta kaas',
-                        price: 2.50,
-                        imageSrc: ''
-                    },
-                    { 
-                        id: 45, 
-                        name: 'Brie',
-                        description: 'Een stukje brie kaas',
-                        price: 3.50,
-                        imageSrc: ''
-                    },
-                ]
-            },
-            { 
-                id: 7, 
-                name: 'Eieren',
-                products: [
-                    { 
-                        id: 50, 
-                        name: 'Scharreleieren',
-                        description: 'Een doosje scharreleieren',
-                        price: 2.50,
-                        imageSrc: ''
-                    },
-                ]                
-            }
-        ]
-    }
-]);
+// Mock data JSON import
+import mockData from '@/data/mockData.json';
 
 const route = useRoute();
 const categoryId = ref(route.params.categoryId);
-const category = ref(allCategories.value.find(cat => cat.id === Number(categoryId.value)));
+const category = ref(mockData.find(cat => cat.id === Number(categoryId.value)));
 
 const categoryName = computed(() => category.value?.name);
 const displayedSubcategories = computed(() => category.value?.subcategories);
@@ -265,7 +70,7 @@ const displayedSubcategories = computed(() => category.value?.subcategories);
 const bannerSrc = computed(() => category.value?.bannerSrc);
 
 watch(categoryId, (newId) => {
-    category.value = allCategories.value.find(cat => cat.id === Number(newId));
+    category.value = mockData.find(cat => cat.id === Number(newId));
 });
 
 const formatPrice = (price) => {
@@ -273,6 +78,10 @@ const formatPrice = (price) => {
         price = 0;
     }
     return new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR' }).format(price).replace('€', '');
+}
+
+const resolveImagePath = (path) => {
+    return new URL(`../${path}`, import.meta.url).href;
 }
 </script>
 
