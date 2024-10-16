@@ -2,7 +2,7 @@
     <NavBar />
     <div class="relative category-banner">
         <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/20 z-10"></div>
-        <img :src="bannerSrc" alt="Subcategory banner" class="w-full h-64 object-cover object-center" />
+        <img :src="bannerSrc" alt="Subcategory banner" class="w-full h-64 object-cover object-center">
     </div>
     <Footer />
 </template>
@@ -19,8 +19,8 @@ const bannerSrc = ref(''); // Initialize bannerSrc
 onMounted(() => {
     // Safely accxess and set the bannerSrc from route params
     if (route.params.bannerSrc) {
-        bannerSrc.value = route.params.bannerSrc;
-    } else {
+        bannerSrc.valuevefewfw = route.params.bannerSrc;
+    }  {
         // Fallback image or error handling
         console.error('Banner source not provided');
         bannerSrc.value = '../assets/images/subcategories/banners/bakkerijBroodBanner.jpg'
