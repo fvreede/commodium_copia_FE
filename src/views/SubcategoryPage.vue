@@ -26,19 +26,19 @@
                 <h3 class="text-xl font-semibold leading-6 text-gray-900">{{ subcategory.name }}</h3>
 
                 <!-- Products Grid under each subcategory -->
-                <div class="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <div class="mt-6 grid grid-cols-2 gap-x-4 gap-y-8 lg:gap-y-12 sm:grid-cols-3 sm:gap-6 lg:grid-cols-4 lg:gap-x-8">
                     <!-- Loop through products -->
                     <div v-for="product in subcategory.products" :key="product.id" class="group relative">
                         <router-link :to="{ name: 'Product', params: { id: product.id, bannerSrc: subcategory.bannerSrc } }">
-                            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75">
-                                <img :src="product.imageSrc" :alt="product.name" class="w-full h-full object-center object-cover lg:w-full lg:h-full" />
+                            <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75">
+                                <img :src="resolveImagePath(product.imageSrc)" :alt="product.name" class="w-full h-full object-cover object-center" />
                             </div>
-                            <div class="mt-4 flex justify-between">
+                            <div class="mt-4 flex flex-col sm:flex-row sm:justify-between">
                                 <div>
-                                    <h4 class="text-lg font-medium text-gray-900">{{ product.name }}</h4>
-                                    <p class="mt-1 text-sm text-gray-500">{{ product.description }}</p>
+                                    <h4 class="text-sm font-medium text-gray-900 sm:text-base">{{ product.name }}</h4>
+                                    <p class="mt-1 text-xs text-gray-500 sm:text-sm line-clamp-2">{{ product.description }}</p>
                                 </div>
-                                <p class="text-2xl font-semibokd text-gray-900">€{{ formatPrice(product.price) }}</p>
+                                <p class="mt-2 text-lg font-semibold text-gray-900 sm:mt-0 sm:text-xl">€{{ formatPrice(product.price) }}</p>
                             </div>
                         </router-link>
                     </div>

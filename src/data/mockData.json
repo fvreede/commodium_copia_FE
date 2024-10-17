@@ -12,22 +12,36 @@
                         "id": 1,
                         "name": "Wortelen",
                         "description": "Vers van het land, knapperige wortelen boordevol vitamines",
-                        "price": 1.99,
-                        "imageSrc": "#"
+                        "price": 1.45,
+                        "imageSrc": "assets/images/products/groenten_fruit/groenten/wortelen.jpg"
                     },
                     {
                         "id": 2,
-                        "name": "Bloemkool",
-                        "description": "Romige bloemkool, perfect voor al je gezonde gerechten",
+                        "name": "Biologische pompoen",
+                        "description": "Heerlijke biologische pompoen, perfect voor soep, stoofpotjes en herfstgerechten.",
                         "price": 2.99,
-                        "imageSrc": "#"
+                        "imageSrc": "assets/images/products/groenten_fruit/groenten/biologischePompoen.jpg"
                     },
                     {
                         "id": 3,
-                        "name": "Spinazie",
+                        "name": "Knolselderij",
                         "description": "Lekkere, verse spinazie rijk aan ijzer",
                         "price": 1.49,
-                        "imageSrc": "#"
+                        "imageSrc": "assets/images/products/groenten_fruit/groenten/knolselderij.jpg"
+                    },
+                    {
+                        "id": 4,
+                        "name": "Pastinaak",
+                        "description": "Zoete, aromatische pastinaak, perfect voor puree of ovengerechten",
+                        "price": 1.99,
+                        "imageSrc": "assets/images/products/groenten_fruit/groenten/pastinaak.jpg"
+                    },
+                    {
+                        "id": 5,
+                        "name": "Zoete aardappels",
+                        "description": "Verfrissende komkommer, perfect voor salades of snacks",
+                        "price": 1.49,
+                        "imageSrc": "assets/images/products/groenten_fruit/groenten/zoeteAardappels.jpg"
                     }
                 ]
             },
@@ -37,27 +51,27 @@
                 "products": [
                     {
                         "id": 1,
-                        "name": "Appels",
-                        "description": "Sappige appels, rechtstreeks van de boomgaard",
-                        "price": 1.99,
-                        "imageSrc": "#"
+                        "name": "Granny Smith appels",
+                        "description": "Heerlijke frisse en knapperige appels, perfect voor een gezonde snack of in een salade.",
+                        "price": 2.99,
+                        "imageSrc": "assets/images/products/groenten_fruit/fruit/grannySmithAppels.jpg"
                     },
                     {
                         "id": 2,
-                        "name": "Sinaasappels",
-                        "description": "Zonovergoten sinaasappels uit het hart van Spanje",
-                        "price": 2.99,
-                        "imageSrc": "#"
+                        "name": "Handsinaasappels",
+                        "description": "Zonnig en sappig, deze Spaanse sinaasappels brengen de Mediterrane zon op je bord.",
+                        "price": 3.29,
+                        "imageSrc": "assets/images/products/groenten_fruit/fruit/handSinaasappels.jpg"
                     },
                     {
                         "id": 3,
-                        "name": "Bananen",
-                        "description": "Tropische bananen, heerlijk zoet en voedzaam",
-                        "price": 1.49,
-                        "imageSrc": "#"
+                        "name": "Chiquita bananen family pack",
+                        "description": "Zoete en voedzame bananen, ideaal voor smoothies of als tussendoortje voor de hele familie.",
+                        "price": 2.19,
+                        "imageSrc": "assets/images/products/groenten_fruit/fruit/chiquitaBananen.jpeg"
                     }
                 ]
-            }
+            }            
         ]
     },
     {
@@ -74,21 +88,21 @@
                         "name": "Wit brood",
                         "description": "Versgebakken wit brood met een knapperige korst",
                         "price": 1.99,
-                        "imageSrc": "#"
+                        "imageSrc": "assets/images/products/bakkerij_brood/brood/witBrood.jpg"
                     },
                     {
                         "id": 2,
                         "name": "Bruin brood",
                         "description": "Gezond bruin brood, rijk aan vezels",
                         "price": 2.99,
-                        "imageSrc": "#"
+                        "imageSrc": "assets/images/products/bakkerij_brood/brood/bruinBrood.jpg"
                     },
                     {
                         "id": 3,
                         "name": "Croissant",
                         "description": "Luchtige croissants, warm en vers uit de oven",
                         "price": 1.49,
-                        "imageSrc": "#"
+                        "imageSrc": "assets/images/products/bakkerij_brood/brood/croissants.jpg"
                     }
                 ]
             },
@@ -98,27 +112,27 @@
                 "products": [
                     {
                         "id": 1,
-                        "name": "Red Velvet Cake",
-                        "description": "Rijke, fluweelzachte red velvet cake met romige topping",
-                        "price": 1.99,
-                        "imageSrc": "#"
+                        "name": "Red Velvet Muffins",
+                        "description": "Luchtige muffins met de klassieke red velvet smaak, afgewerkt met een romige topping",
+                        "price": 1.69,
+                        "imageSrc": "assets/images/products/bakkerij_brood/gebak/redVelvetMuffin.jpg"
                     },
                     {
                         "id": 2,
-                        "name": "Muffins",
-                        "description": "Zachte muffins, een perfecte zoete snack",
-                        "price": 2.99,
-                        "imageSrc": "#"
+                        "name": "Luxe Blueberry Muffins",
+                        "description": "Zachte muffins boordevol sappige blauwe bessen, een perfecte zoete traktatie",
+                        "price": 1.69,
+                        "imageSrc": "assets/images/products/bakkerij_brood/gebak/luxeBlueberryMuffin.jpg"
                     },
                     {
                         "id": 3,
-                        "name": "Brownies",
-                        "description": "Chocoladerijke brownies, vol van smaak",
-                        "price": 1.49,
-                        "imageSrc": "#"
+                        "name": "Espresso Brownies",
+                        "description": "Chocoladerijke brownies met een shot espresso voor een intense herfstboost",
+                        "price": 3.99,
+                        "imageSrc": "assets/images/products/bakkerij_brood/gebak/espressoBrownies.jpg"
                     }
                 ]
-            }
+            }            
         ]
     },
     {
@@ -132,17 +146,52 @@
                 "products": [
                     {
                         "id": 1,
-                        "name": "Melk",
-                        "description": "Verse melk, romig en puur",
+                        "name": "Campina volle melk",
+                        "description": "Romige, volle melk, perfect voor een gezond ontbijt of koffie",
                         "price": 1.99,
-                        "imageSrc": "#"
+                        "imageSrc": "assets/images/products/zuivel_eieren/melk/campinaVolleMelk.jpg"
                     },
                     {
                         "id": 2,
-                        "name": "Yoghurt",
-                        "description": "Heerlijke, frisse yoghurt voor elk moment",
+                        "name": "Campina halfvolle melk",
+                        "description": "Frisse, lichte melk, een goede balans tussen romig en mager",
+                        "price": 1.79,
+                        "imageSrc": "assets/images/products/zuivel_eieren/melk/campinaHalfvolleMelk.jpg"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Campina volle yoghurt",
+                        "description": "Rijke, romige yoghurt, ideaal voor smoothies of ontbijt",
+                        "price": 2.49,
+                        "imageSrc": "assets/images/products/zuivel_eieren/melk/campinaVolleYogurt.jpg"
+                    },
+                    {
+                        "id": 4,
+                        "name": "Campina halfvolle yoghurt",
+                        "description": "Lichte, frisse yoghurt, perfect als tussendoortje of dessert",
+                        "price": 2.29,
+                        "imageSrc": "assets/images/products/zuivel_eieren/melk/campinaHalfvolleYogurt.jpg"
+                    },
+                    {
+                        "id": 5,
+                        "name": "Campina magere yoghurt",
+                        "description": "Verfrissende, magere yoghurt met een volle smaak zonder schuldgevoel",
+                        "price": 1.99,
+                        "imageSrc": "assets/images/products/zuivel_eieren/melk/campinaMagereYogurt.jpg"
+                    },
+                    {
+                        "id": 6,
+                        "name": "Campina Griekse Stijl 5%",
+                        "description": "Romige Griekse yoghurt, perfect voor gezonde snacks",
                         "price": 2.99,
-                        "imageSrc": "#"
+                        "imageSrc": "assets/images/products/zuivel_eieren/melk/campinaGriekseYogurt5.jpg"
+                    },
+                    {
+                        "id": 7,
+                        "name": "Campina Griekse Stijl 10%",
+                        "description": "Extra romige Griekse yoghurt, rijk van smaak",
+                        "price": 3.49,
+                        "imageSrc": "assets/images/products/zuivel_eieren/melk/campinaGriekseYogurt10.jpg"
                     }
                 ]
             },
@@ -152,24 +201,38 @@
                 "products": [
                     {
                         "id": 1,
-                        "name": "Gouda kaas",
-                        "description": "Zachte, romige Gouda, een echte klassieker",
+                        "name": "Beemster Jong",
+                        "description": "Zachte, romige Gouda kaas met 6 plakken.",
                         "price": 1.99,
-                        "imageSrc": "#"
+                        "imageSrc": "assets/images/products/zuivel_eieren/kaas/beemsterJongKaas.jpg"
                     },
                     {
                         "id": 2,
-                        "name": "Feta kaas",
-                        "description": "Ziltige feta uit Griekenland, perfect voor salades",
-                        "price": 2.99,
-                        "imageSrc": "#"
+                        "name": "Beemster Extra Oud",
+                        "description": "Volle oude Gouda kaas met 5 plakken.",
+                        "price": 2.49,
+                        "imageSrc": "assets/images/products/zuivel_eieren/kaas/beemsterExtraOudKaas.jpg"
                     },
                     {
                         "id": 3,
-                        "name": "Brie kaas",
-                        "description": "Romige brie met een zachte, smeltende textuur",
+                        "name": "Old Amsterdam",
+                        "description": "Pittige oude kaas met 8 plakken.",
+                        "price": 3.99,
+                        "imageSrc": "assets/images/products/zuivel_eieren/kaas/oldAmsterdamKaas.jpg"
+                    },
+                    {
+                        "id": 4,
+                        "name": "Salakis Feta",
+                        "description": "Ziltige Griekse feta kaas.",
+                        "price": 2.99,
+                        "imageSrc": "assets/images/products/zuivel_eieren/kaas/salakisFetaKaas.jpg"
+                    },
+                    {
+                        "id": 5,
+                        "name": "Président Le Brie",
+                        "description": "Romige zachte brie",
                         "price": 1.49,
-                        "imageSrc": "#"
+                        "imageSrc": "assets/images/products/zuivel_eieren/kaas/presidentLeBrieKaas.jpg"
                     }
                 ]
             },
@@ -182,7 +245,7 @@
                         "name": "Scharreleieren",
                         "description": "Vers geplukte scharreleieren van blije kippen",
                         "price": 1.99,
-                        "imageSrc": "#"
+                        "imageSrc": "assets/images/products/zuivel_eieren/eieren/scharreleieren.jpg"
                     }
                 ]
             }
