@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Homepage from "../views/Homepage.vue";
 import Category from '../views/CategoryPage.vue';
-import SubcategoryPage from "../views/SubcategoryPage.vue";
+import SubcategoryPage from "@/views/SubcategoryPage.vue";
 import ProductPage from "../views/ProductPage.vue";
 
 const router = createRouter({
@@ -26,7 +26,13 @@ const router = createRouter({
             path: '/product/:id',
             name: 'Product',
             component: ProductPage,
-            props: true,
+            props: route => ({
+                id: route.params.id,
+                bannerSrc: route.query.bannerSrc,
+                categoryName: route.query.categoryName,
+                subcategoryName: route.query.subcategoryName,
+                categoryId: route.query.categoryId, // Ensure categoryId is passed as a query parameter
+            }),
         }
     ],
     scrollBehavior(to, from, savedPosition) {

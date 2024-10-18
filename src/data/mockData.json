@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Groenten en Fruit",
-        "bannerSrc": "assets/images/subcategories/banners/groentenFruitBanner.jpg",
+            "bannerSrc": "assets/images/subcategories/banners/groentenFruitBanner.jpg",
         "subcategories": [
             {
                 "id": 1,

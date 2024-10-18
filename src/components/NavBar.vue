@@ -13,10 +13,10 @@
                         <a href="/" class="text-2xl font-bold text-gray-700 block lg:hidden">ComCopia</a>
                         <a href="/" class="hidden lg:block text-2xl font-bold text-gray-700">Commodium Copia</a>
                     </div>
-                    <!-- Search bar -->
+                    <!-- Search bar 
                     <div class="hidden sm:ml-6 sm:block">
                         <input type="search" placeholder="Zoek een product" v-model="searchQuery" class="w-full max-w-md rounded-md border border-gray-300 p-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400 shadow-sm"/>
-                    </div>
+                    </div>-->
                     <!-- Nav bar -->
                     <div class="hidden sm:ml-6 sm:block">
                         <div class="flex space-x-4">
