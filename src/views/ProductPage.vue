@@ -7,13 +7,13 @@
         <img :src="resolveImagePath(bannerSrc)" :alt="categoryName + ' banner'" class="w-full h-64 object-cover object-center" />
         <div class="absolute inset-0 z-20 flex flex-col items-center justify-center p-4">
           <h2 class="text-2xl font-bold tracking-tight h_text sm:text-2xl md:text-4xl lg:text-6xl text-center mb-4 md:mb-0 md:absolute md:left-6 md:top-1/2 md:transform md:-translate-y-1/2">
-            {{ categoryName }}
+            {{ subcategoryName }}
           </h2>
           <router-link :to="{ name: 'Subcategory', params: { categoryId: categoryId } }" class="flex items-center px-4 py-2 text-xs font-medium text-white bg-gray-800 hover:bg-gray-900 rounded-full md:absolute md:right-4 md:top-1/2 md:transform md:-translate-y-1/2">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
             </svg>
-            Back to {{ subcategoryName }}
+            Terug naar {{ categoryName }}
           </router-link>
         </div>
       </div>
