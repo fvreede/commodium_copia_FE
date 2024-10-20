@@ -12,6 +12,7 @@
                         "id": 1,
                         "name": "Wortelen",
                         "description": "Vers van het land, knapperige wortelen boordevol vitamines",
+                        "fullDescription": "TEST",
                         "price": 1.45,
                         "imageSrc": "assets/images/products/groenten_fruit/groenten/wortelen.jpg"
                     },
