@@ -3,8 +3,8 @@
 ## Inhoudsopgave
 1.  [Inleiding](#inleiding)
 2.  [Projectbeschrijving](#projectbeschrijving)
-3.  [Gebruikte Tools](#gebruikte-tools)
-4.  [Toekomstige Ontwikkelingen](#toekomstige-ontwikkelingen)
+3.  [Gebruikte tools](#gebruikte-tools)
+4.  [Toekomstige ontwikkelingen](#toekomstige-ontwikkelingen)
 
 ---
 ## Inleiding
@@ -30,6 +30,7 @@ Frontend:
 6. Fontawesome brands icons (for Social media icons)
 
 ### Toekomstige ontwikkelingen
+
 - Backend integratie met Laravel
 - Authenticatie en authorisatie met Breeze
 - API integratie met Inertia
