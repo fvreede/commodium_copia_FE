@@ -19,9 +19,9 @@
 
         <!-- Product Details -->
         <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-            <div class="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8 prod_det">
+            <div class="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
                 <!-- Product Image -->
-                <div class="flex justify-center items-center aspect-w-1 aspect-h-1 w-full max-w-md lg:max-w-xs overflow-hidden rounded-lg">
+                <div class="flex justify-center items-center aspect-w-1 aspect-h-1 w-full max-w-md lg:max-w-xs overflow-hidden rounded-lg lg:ml-40 ml-0">
                     <img :src="resolveImagePath(product.imageSrc)" :alt="product.name" class="w-full h-auto object-cover object-center sm:rounded-lg" />
                 </div>
 
@@ -39,14 +39,14 @@
                     </div>
                     <!-- Add to Cart button -->
                      <div class="mt-10 flex">
-                        <button type="submit" class="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full">
-                            Add to cart
+                        <button type="submit" class="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-orange-600 py-3 px-8 text-base font-medium text-white hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-brown-50 sm:w-full">
+                            Voeg toe aan winkelwagen
                         </button>
                     </div>
                 </div>
             </div>
             <!-- Full Product Description -->
-             <div class="mt-16">
+             <div class="mt-4">
                 <h2 class="text-2xl font-semibold tracking-tight text-gray-900">Productomschrijving</h2>
                 <hr class="my-4 border-gray-500" />
                 <div class="mt-4">
@@ -72,66 +72,66 @@ import mockData from '@/data/mockData.json';
 
 // Define props
 const props = defineProps({
-id: {
-    type: String,
-    required: true
-},
-bannerSrc: {
-    type: String,
-    required: true
-},
-categoryName: {
-    type: String,
-    required: true
-},
-subcategoryName: {
-    type: String,
-    required: true
-},
-categoryId: {
-    type: String,
-    required: true
-}
+    id: {
+        type: String,
+        required: true
+    },
+    bannerSrc: {
+        type: String,
+        required: true
+    },
+    categoryName: {
+        type: String,
+        required: true
+    },
+    subcategoryName: {
+        type: String,
+        required: true
+    },
+    categoryId: {
+        type: String,
+        required: true
+    }
 });
 
 const route = useRoute();
 const product = ref(null);
 
 onMounted(() => {
-const productId = Number(props.id);
-const category = mockData.find(cat => cat.id === Number(props.categoryId));
-if (category) {
-    const subcategory = category.subcategories.find(sub => sub.name === props.subcategoryName);
-    if (subcategory) {
-    product.value = subcategory.products.find(p => p.id === productId);
+    const productId = Number(props.id);
+    const category = mockData.find(cat => cat.id === Number(props.categoryId));
+    if (category) {
+        const subcategory = category.subcategories.find(sub => sub.name === props.subcategoryName);
+        if (subcategory) {
+        product.value = subcategory.products.find(p => p.id === productId);
+        }
     }
-}
 
-if (!product.value) {
-    console.error('Product not found:', productId, props.categoryName, props.subcategoryName);
-}
+    if (!product.value) {
+        console.error('Product not found:', productId, props.categoryName, props.subcategoryName);
+    }
 });
 
 const formatPrice = (price) => {
-if (typeof price !== 'number' || isNaN(price)) {
-    price = 0;
-}
-return new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR' }).format(price).replace('€', '');
+    if (typeof price !== 'number' || isNaN(price)) {
+        price = 0;
+    }
+    return new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR' }).format(price).replace('€', '');
 }
 
 const resolveImagePath = (path) => {
-return new URL(`../${path}`, import.meta.url).href;
+    return new URL(`../${path}`, import.meta.url).href;
 }
 </script>
 
 <style scoped>
 .h_text {
-font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-color: #F6EBD8;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    color: #F6EBD8;
 }
 
 .category-banner {
-margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 </style>
