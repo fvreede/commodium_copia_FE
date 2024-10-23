@@ -1,6 +1,6 @@
 <template>
     <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2 md:p-4 bg-slate-50">
-        <article v-for="product in products" :key="product.id" class="bg-beige shadow-md rounded-lg p-2 md:p-4 flex items-start justify-between transition-transform transform hover:scale-105 hover:shadow-lg">
+        <article v-for="product in products" :key="product.id" class="bg-beige shadow-md rounded-lg p-2 md:p-4 flex items-start justify-between">
             <div class="flex-1 pr-4">
                 <h2 class="text-lg md:text-xl font-bold text-orange-700">{{ product.name }}</h2>
                 <p class="text-gray-600 mb-2 md:mb-4">{{ product.description }}</p>
