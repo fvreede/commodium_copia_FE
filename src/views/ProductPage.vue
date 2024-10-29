@@ -37,9 +37,10 @@
                         <h3 class="sr-only">Description</h3>
                         <p class="text-base text-gray-700">{{ product.description }}</p>
                     </div>
+                    
                     <!-- Add to Cart button -->
                      <div class="mt-10 flex">
-                        <button type="submit" class="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-orange-600 py-3 px-8 text-base font-medium text-white hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-brown-50 sm:w-full">
+                        <button @click="cartStore.addToCart(product)" type="submit" class="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-orange-600 py-3 px-8 text-base font-medium text-white hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-brown-50 sm:w-full">
                             Voeg toe aan winkelwagen
                         </button>
                     </div>
@@ -69,6 +70,11 @@ import Footer from '@/components/Footer.vue';
 
 // Mock data JSON import
 import mockData from '@/data/mockData.json';
+
+// Cart store import
+import { useCartStore } from '@/stores/cart';
+// Create cart instance
+const cartStore = useCartStore();
 
 // Define props
 const props = defineProps({

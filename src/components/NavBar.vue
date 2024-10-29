@@ -1,5 +1,5 @@
 <template>
-    <Disclosure as="nav" class="bg-slate-100 fixed w-full top-0 z-50" v-slot="{ open }">
+    <Disclosure as="nav" class="bg-slate-100 fixed w-full top-0 z-[1000]" v-slot="{ open }">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div class="relative flex h-16 items-center justify-between">
                 <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
@@ -36,11 +36,17 @@
                 <!-- End menu button - mobile -->
                 <div class="absolute inset-y-0 right-10 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                     <!-- Shopping cart button -->
-                    <button type="button" class="relative rounded-full bg-slate-50 p-1 text-gray-700 hover:bg-slate-200 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-200">
-                        <span class="absolute -inset-1.5"/>
-                        <span class="sr-only">Show shopping cart</span>
-                        <ShoppingCartIcon class="h-6 w-6" aria-hidden="true"/>
-                    </button>
+                    <!--TODO implement shopping cart functionality -->
+                    <div class="relative">
+                        <button @click="toggleCart" type="button" class="relative rounded-full bg-slate-50 p-1 text-gray-700 hover:bg-slate-200 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-200">
+                            <span class="absolute -inset-1.5"/>
+                            <span class="sr-only">Show shopping cart</span>
+                            <ShoppingCartIcon class="h-6 w-6" aria-hidden="true"/>
+                            <span v-if="cartItemCount > 0" class="absolute top-0 right-0 transform translate-x-1 -translate-y-1 bg-red-500 text-white rounded-full text-xs font-semibold leading-tight h-4 w-4 flex items-center justify-center" :class="{ 'scale-110': isCartUpdated }">
+                                {{ cartItemCount }}
+                            </span>
+                        </button>
+                    </div>
                     <!-- End shopping cart button -->
                     
                     <!-- Profile dropdown (Account) -->
@@ -82,21 +88,42 @@
             </div>
         </DisclosurePanel>
     </Disclosure>
+
+    <!-- Shopping cart component -->
+    <ShoppingCart :isOpen="isCartOpen" @close="closeCart"/>
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon, ShoppingCartIcon, UserIcon, MagnifyingGlassIcon } from '@heroicons/vue/24/outline'
 import { RouterLink } from 'vue-router'
+import ShoppingCart from './ShoppingCart.vue'
+import { useCartStore } from '@/stores/cart'
 
 const navigation = [
     { name: 'Producten', href: '/category' },
     { name: 'Aanbiedingen', href: '#' },
 ]
 
-const activeButton = ref(null);
-const menuOpen = ref(false);
+const activeButton = ref(null)
+const menuOpen = ref(false)
+
+// Shopping cart
+const isCartOpen = ref(false)
+const isCartUpdated = ref(false)
+
+// Cart store integration
+const cartStore = useCartStore()
+const cartItemCount = computed(() => cartStore.totalItems)
+
+// Animate when cart count changes
+watch(cartItemCount, () => {
+    isCartUpdated.value = true
+    setTimeout(() => {
+        isCartUpdated.value = false
+    }, 300)
+})
 
 const showSearch = computed(() => activeButton.value === 'search')
 const profileOpen = computed(() => activeButton.value === 'profile')
@@ -116,4 +143,25 @@ const toggleButton = (button) => {
         }
     }
 };
+
+// Add methods for cart control
+const toggleCart = () => {
+    isCartOpen.value = !isCartOpen.value;
+}
+
+const closeCart = () => {
+    isCartOpen.value = false;
+}
 </script>
+
+<style scoped>
+.scale-110 {
+    animation: pulse 0.3s ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+</style>

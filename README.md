@@ -22,12 +22,14 @@ Het belangrijkste onderdeel van deze nieuwe website is het thuis kunnen laten be
 ### Gebruikte tools
 
 Frontend:
-1. Vue.js 3.4.21
-2. Tailwind.css 3.4.1
-3. Heroicons/Headless UI
-4. Postcss 8.4.38
-5. Autoprefixer 0.4.19
-6. Fontawesome brands icons (for Social media icons)
+1. Vue.js 3.5.11
+2. Vue Router 4.4.5
+3. Tailwind.css 3.4.1
+4. Heroicons/Headless UI
+5. Postcss 8.4.38
+6. Autoprefixer 0.4.19
+7. Fontawesome brands icons (for Social media icons)
+8. Pinia 2.2.4 for state management
 
 ### Toekomstige ontwikkelingen
 
