@@ -14,9 +14,9 @@ export const useCartStore = defineStore('cart', {
     subtotal: (state) => state.items.reduce((total, item) => total + (item.price * item.quantity), 0),
     total: (state) => state.items.reduce((total, item) => total + (item.price * item.quantity), 0) + 5, // Shipping cost
     
-    // Optional: Add formatted price getters for display
-    formattedSubtotal: (state) => `€${state.subtotal.toFixed(2)}`,
-    formattedTotal: (state) => `€${state.total.toFixed(2)}`
+    // Add formatted price getters for display
+    formattedSubtotal: (state) => { return new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR' }).format(state.subtotal); }, 
+    formattedTotal: (state) => { return new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR' }).format(state.total); }, 
   },
   
   actions: {

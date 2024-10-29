@@ -42,11 +42,13 @@
                                   <h3>
                                     {{ item.name }}
                                   </h3>
+                                  <p class="ml-4">{{ item.price.toFixed(2) }}</p>
+                                </div>
+                                <div class="flex">
                                   <h4>
                                     <!-- Link naar product -->
-                                    <Link :href="item.href" class="text-gray-500 hover:text-gray-600"/>
+
                                   </h4>
-                                  <p class="ml-4">{{ item.price.toFixed(2) }}</p>
                                 </div>
                               </div>
                               <!-- QUantity controls -->
@@ -89,21 +91,16 @@
                   <!-- Cart footer -->
                   <div class="border-t border-gray-200 px-4 py-6 sm:px-6">
                     <div class="flow-root">
-                      <div class="flex justify-between text-base font-medium text-gray-900 mb-2"></div>
-                      <p>Subtotaal</p>
-                      <p>€{{ cartStore.subtotal.toFixed(2) }}</p>
-                    </div>
-                    <div class="flex justify-between text-sm text-gray-600 mb-4">
-                      <p>Verzendkosten</p>
-                      <p>€5,00</p>
+                      <div class="flex justify-between text-base font-medium text-gray-900 mb-2">
+                        <p>Subtotaal</p>
+                        <p>€{{ cartStore.subtotal.toFixed(2) }}</p>
+                      </div>
                     </div>
                     <div class="flex justify-between text-lg fond-bold text-gray-900">
                       <p>Totaal</p>
                       <p>€{{ cartStore.total.toFixed(2) }}</p>
                     </div>
                   </div>
-                  
-                  <p class="mt-0.5 text-sm text-gray-500">Verzendkosten en BTW worden berekeend bij het afrekenen.</p>
 
                   <div class="mt-6">
                     <button type="button" :disabled="cartStore.items.length === 0" class="w-full rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base text-medium text-white shadow-sm hover:bg-indigo-700 disabled:bg-gray-400 disabled:cursor-not-allowed" >Verder naar bestellen</button>
