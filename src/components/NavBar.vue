@@ -1,30 +1,45 @@
+/**
+ * Bestandsnaam: NavBar.vue
+ * Auteur: Fabio Vreede
+ * Versie: v1.9.0
+ * Datum: 2024-10-29
+ * Tijd: 13:41:07
+ * Doel: Dit component definieert de navigatiebalk voor Commodium Copia, inclusief zoekfunctionaliteit, een winkelwagenicoon, een profielmenu en een mobiele versie van het menu. Het biedt gebruikers toegang tot verschillende pagina's en zorgt voor navigatie en interactie binnen de site.
+ */
+
 <template>
+    <!-- Navigatiebalk met vaste positie aan de bovenkant -->
     <Disclosure as="nav" class="bg-slate-100 fixed w-full top-0 z-[1000]" v-slot="{ open }">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div class="relative flex h-16 items-center justify-between">
                 <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                    <!-- Zoekknop voor mobiele versie -->
                     <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
                         <button @click="toggleButton('search')" class="relative rounded-full p-2 text-gray700 hover:bg-slate-200 hover:text-gray-900">
                             <MagnifyingGlassIcon class="h-6 w-6" aria-hidden="true"/>
                         </button>
                     </div>
-                    <!-- Logo -->                   
+
+                    <!-- Logo, weergave afhankelijk van schermgrootte -->                   
                     <div class="flex flex-shrink-0 items-center mr-20 sm:mr-0">
                         <a href="/" class="text-2xl font-bold text-gray-700 block lg:hidden">ComCopia</a>
                         <a href="/" class="hidden lg:block text-2xl font-bold text-gray-700">Commodium Copia</a>
                     </div>
-                    <!-- Search bar -->
+
+                    <!-- Zoekbalk, alleen zichtbaar op grotere schermen -->
                     <div class="hidden sm:ml-6 sm:block">
                         <input type="search" placeholder="Zoek een product" v-model="searchQuery" class="w-full max-w-md rounded-md border border-gray-300 p-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400 shadow-sm"/>
                     </div>
-                    <!-- Nav bar -->
+
+                    <!-- Navigatieknoppen voor desktop -->
                     <div class="hidden sm:ml-6 sm:block">
                         <div class="flex space-x-4">
                             <RouterLink v-for="item in navigation" :key="item.name" :to="item.href" :class="[item.current ? 'bg-slate-50 text-gray-700' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900', 'rounded-md px-3 py-2 text-sm font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</RouterLink>
                         </div>
                     </div>
                 </div>
-                <!-- Menu button - mobile -->
+
+                <!-- Knop voor menu op mobiele versie -->
                 <div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
                     <DisclosureButton @click="toggleButton('menu')" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-slate-200 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black">
                         <span class="absolute -inset-0.5"/>
@@ -34,11 +49,12 @@
                     </DisclosureButton>
                 </div>
                 <!-- End menu button - mobile -->
+                 
+                <!-- Winkelwagenknop, inclusief badge voor item aantal -->
                 <div class="absolute inset-y-0 right-10 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                     <!-- Shopping cart button -->
-                    <!--TODO implement shopping cart functionality -->
                     <div class="relative">
-                        <button @click="toggleCart" type="button" class="relative rounded-full bg-slate-50 p-1 text-gray-700 hover:bg-slate-200 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-200">
+                        <button @click.stop="toggleCart" type="button" class="relative rounded-full bg-slate-50 p-1 text-gray-700 hover:bg-slate-200 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-200">
                             <span class="absolute -inset-1.5"/>
                             <span class="sr-only">Show shopping cart</span>
                             <ShoppingCartIcon class="h-6 w-6" aria-hidden="true"/>
@@ -49,7 +65,7 @@
                     </div>
                     <!-- End shopping cart button -->
                     
-                    <!-- Profile dropdown (Account) -->
+                    <!-- Profiel dropdown met account-opties -->
                     <Menu as="div" class="relative ml-3">
                         <div>
                             <MenuButton @click="toggleButton('profile')" class="relative flex rounded-full bg-slate-50 p-1 text-gray-700 hover:bg-slate-200 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-200">
@@ -76,10 +92,12 @@
             </div>
         </div>
 
+        <!-- Zoekveld specifiek voor mobiele weergave, weergegeven bij 'search' actie -->
         <div v-if="showSearch && !menuOpen" class="sm:hidden px-4 pb-3 pt-2">
             <input type="search" placeholder="Zoek een product" v-model="searchQuery" class="w-full rounded-md border border-gray-300 p-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400 shadow-sm"/>
         </div>
 
+        <!-- Mobiel navigatiemenu, weergegeven bij 'menu' actie -->
         <DisclosurePanel v-if="menuOpen" class="sm:hidden">
             <div class="space-y-1 px-2 pb-3 pt-2">
                 <DisclosureButton v-for="item in navigation" :key="item.name" as="a" :href="item.href" :class="[item.current ? 'bg-slate-50 text-gray-700' : 'text-gray-700 hover:bg-gray-200 hover:text-gray-900', 'block rounded-md px-3 py-2 text-base font-medium']" :aria-current="item.current ? 'page' : undefined">
@@ -89,11 +107,15 @@
         </DisclosurePanel>
     </Disclosure>
 
-    <!-- Shopping cart component -->
+    <!-- Winkelwagencomponent dat geopend kan worden en sluit door event -->
     <ShoppingCart :isOpen="isCartOpen" @close="closeCart"/>
 </template>
 
 <script setup>
+/**
+ * Vue component setup voor NavBar.vue
+ * Importeert en initialiseert de vereiste componenten, iconen, winkelwagen functionaliteit en methoden voor navigatie en interactieve elementen.
+ */
 import { computed, ref, watch } from 'vue'
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon, ShoppingCartIcon, UserIcon, MagnifyingGlassIcon } from '@heroicons/vue/24/outline'
@@ -101,6 +123,7 @@ import { RouterLink } from 'vue-router'
 import ShoppingCart from './ShoppingCart.vue'
 import { useCartStore } from '@/stores/cart'
 
+// Navigatieopties, de actieve button en menu status
 const navigation = [
     { name: 'Producten', href: '/category' },
     { name: 'Aanbiedingen', href: '#' },
@@ -109,15 +132,15 @@ const navigation = [
 const activeButton = ref(null)
 const menuOpen = ref(false)
 
-// Shopping cart
+// Variabelen voor de winkelwagencomponent
 const isCartOpen = ref(false)
 const isCartUpdated = ref(false)
 
-// Cart store integration
+// Verbindt de winkelwagenstore met het component om het aantal items bij te houden
 const cartStore = useCartStore()
 const cartItemCount = computed(() => cartStore.totalItems)
 
-// Animate when cart count changes
+// Animeert het winkelwagenicoon wanneer het aantal items verandert
 watch(cartItemCount, () => {
     isCartUpdated.value = true
     setTimeout(() => {
@@ -125,9 +148,11 @@ watch(cartItemCount, () => {
     }, 300)
 })
 
+// Computed properties voor zoek- en profielopties
 const showSearch = computed(() => activeButton.value === 'search')
 const profileOpen = computed(() => activeButton.value === 'profile')
 
+// Functie om actieve knop bij te houden en het menu open of dicht te klappen
 const toggleButton = (button) => {
     if (activeButton.value === button) {
         activeButton.value = null;
@@ -144,7 +169,7 @@ const toggleButton = (button) => {
     }
 };
 
-// Add methods for cart control
+// Methoden om de winkelwagen te openen, sluiten en de status te togglen
 const toggleCart = () => {
     isCartOpen.value = !isCartOpen.value;
 }
@@ -155,10 +180,12 @@ const closeCart = () => {
 </script>
 
 <style scoped>
+/* Stijl voor schaalvergroting animatie bij winkelwagen update */
 .scale-110 {
     animation: pulse 0.3s ease-in-out;
 }
 
+/* Keyframes voor pulse-animatie */
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.2); }
