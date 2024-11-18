@@ -72,7 +72,7 @@ Hier volgt een overzicht van de belangrijkste bestanden en mappen binnen het pro
   - **NewsSection.vue**
   - **Footer.vue**
 
-- [**CategoryPage.vue](src/views/CategoryPage.vue), [SubcategoryPage.vue](src/views/SubcategoryPage.vue), [ProductPage.vue**](src/views/ProductPage.vue)  
+- [**CategoryPage.vue**](src/views/CategoryPage.vue), [**SubcategoryPage.vue**](src/views/SubcategoryPage.vue), [**ProductPage.vue**](src/views/ProductPage.vue)  
   Deze drie views zorgen voor de navigatie tussen productcategorieën, subcategorieën en productdetails, met koppelingen via `router-link` voor een naadloze gebruikerservaring.
 
 ### src/data
