@@ -27,8 +27,8 @@ export const useCartStore = defineStore('cart', {
     // Bestaande getters om de subtotaalprijs te berekenen
     subtotal: (state) => state.items.reduce((total, item) => total + (item.price * item.quantity), 0),
 
-    // Berekent de totaalprijs inclusief verzendkosten (vast bedrag van €5)
-    total: (state) => state.items.reduce((total, item) => total + (item.price * item.quantity), 0) + 5, 
+    // Berekent de totaalprijs inclusief verzendkosten (vast bedrag van €5)                                                                    
+    total: (state) => state.items.reduce((total, item) => total + (item.price * item.quantity), 0) + 5,       
 
     // Geformatteerde subtotaalprijs voor weergave in het EUR-format
     formattedSubtotal: (state) => { 

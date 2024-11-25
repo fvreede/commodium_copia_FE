@@ -1,8 +1,8 @@
 /**
  * Bestandsnaam: CustomerService.vue
  * Auteur: Fabio Vreede
- * Versie: v1.0.0
- * Datum: 2024-10-06
+ * Versie: v1.1.0
+ * Datum: 2024-11-20
  * Tijd: 12:01:45
  * Doel: Dit component toont de contactgegevens van de klantenservice, zoals telefoonnummer, openingstijden en e-mail.
  */
@@ -33,7 +33,7 @@
             <!-- Informatieblok e-mailadres -->
             <div>
                 <h4 class="text-sm font-semibold">E-mail</h4>
-                <p class="text-sm text-gray-700">Stuur ons een bericht via <strong>klantenservice@commodiumcopia.nl</strong></p>
+                <p class="text-sm text-gray-700">Stuur ons een bericht via <strong><a href="mailto:klantenservice@commodiumcopia.nl">klantenservice@commodiumcopia.nl</a></strong></p>
             </div>
         </div>
     </div>
