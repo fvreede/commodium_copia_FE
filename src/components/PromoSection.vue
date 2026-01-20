@@ -1,9 +1,18 @@
+/**
+ * Bestandsnaam: PromoSection.vue
+ * Auteur: Fabio Vreede
+ * Versie: v1.3.0
+ * Datum: 31-10-2024
+ * Tijd: 16:42:58
+ * Doel: Deze component toont een promotie met een achtergrondafbeelding, overlay, en een call-to-action knop.
+ */
+
 <template>
   <div class="relative min-h-screen">
-    <!-- Background image -->
+    <!-- Achtergrondafbeelding voor de promotie -->
     <img src="@/assets/images/herfstPromotion.jpg" alt="Herfst promotie" class="absolute inset-0 h-full w-full object-cover"/>
 
-    <!-- Overlay for readability -->
+    <!-- Overlay om tekst leesbaar te maken -->
     <div class="absolute inset-0 bg-black opacity-30"></div>
 
     <!-- Content -->
