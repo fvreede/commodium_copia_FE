@@ -8,7 +8,11 @@
 */
 
 import { createRouter, createWebHistory } from "vue-router";
+<<<<<<< HEAD
 import Homepage from "../views/Homepage.vue"; // Import de homepage view
+=======
+import HomePage from "../views/HomePage.vue"; // Import de homepage view
+>>>>>>> 050428d119ff130f4df2f464bfdcdcb1bfe0dd7b
 import Category from '../views/CategoryPage.vue'; // Import de categorypagina
 import SubcategoryPage from "@/views/SubcategoryPage.vue"; // Import de subcategorypagina
 import ProductPage from "../views/ProductPage.vue"; // Import de productpagina
@@ -23,7 +27,7 @@ const router = createRouter({
       // Route voor de startpagina
       path: '/',
       name: 'Home',
-      component: Homepage,
+      component: HomePage,
     },
     {
       // Route voor de categorie-overzichtspagina
